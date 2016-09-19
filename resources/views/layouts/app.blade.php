@@ -21,6 +21,7 @@
     </script>
 </head>
 <body>
+    @if (Auth::check())
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
@@ -76,6 +77,7 @@
             </div>
         </div>
     </nav>
+    @endif
 
     @yield('content')
 
