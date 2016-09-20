@@ -10,10 +10,16 @@
         @if (Auth::check())
         <header>
             <a class="user" href="#">
-                <span class="user-avatar"></span>
+                <span class="user-avatar {{ Auth::user()->color }}">{{ Auth::user()->initials }}</span>
                 <span class="user-name">{{ Auth::user()->name }}</span>
                 <span class="user-arrow"></span>
             </a>
+            <div class="user-popover">
+                <ul class="menu">
+                    <li class="menu-item disabled">{{ Auth::user()->email }}</li>
+                    <li class="menu-item"><a href="{{ url('/logout') }}">Sign Out</a></li>
+                </ul>
+            </div>
         </header>
         @endif
         @yield('content')

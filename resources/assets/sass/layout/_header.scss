@@ -18,11 +18,38 @@ header {
     }
 
     .user-avatar {
+        color: #fff;
+        font-size: 14px;
+        line-height: 32px;
+        text-align: center;
         width: 32px;
         height: 32px;
-        background-color: black;
         border-radius: 50%;
         margin: 0 5px;
+
+        &.red {
+            background-color: $red;
+        }
+
+        &.orange {
+            background-color: $orange;
+        }
+
+        &.brown {
+            background-color: $brown;
+        }
+
+        &.blue {
+            background-color: $blue;
+        }
+
+        &.green {
+            background-color: $green;
+        }
+
+        &.purple {
+            background-color: $purple;
+        }
     }
 
     .user-name {
@@ -30,6 +57,10 @@ header {
         font-size: 15px;
         line-height: 32px;
         padding: 0 5px;
+        // display: block;
+        // white-space: nowrap;
+        // overflow: hidden;
+        // text-overflow: ellipsis;
     }
 
     .user-arrow {
@@ -40,5 +71,15 @@ header {
         -webkit-mask-size: 20px 20px;
         -webkit-mask-repeat: no-repeat;
         background-color: #737272;
+    }
+
+    .user-popover {
+        position: absolute;
+        top: 55px;
+        right: 10px;
+        min-width: 200px;
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
     }
 }

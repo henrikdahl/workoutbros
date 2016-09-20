@@ -126,11 +126,26 @@ header {
     align-items: center;
     padding: 2px 0 4px; }
   header .user-avatar {
+    color: #fff;
+    font-size: 14px;
+    line-height: 32px;
+    text-align: center;
     width: 32px;
     height: 32px;
-    background-color: black;
     border-radius: 50%;
     margin: 0 5px; }
+    header .user-avatar.red {
+      background-color: #db4c3f; }
+    header .user-avatar.orange {
+      background-color: #e29600; }
+    header .user-avatar.brown {
+      background-color: #b68f6f; }
+    header .user-avatar.blue {
+      background-color: #2c8dec; }
+    header .user-avatar.green {
+      background-color: #5fa004; }
+    header .user-avatar.purple {
+      background-color: #887daf; }
   header .user-name {
     color: #262626;
     font-size: 15px;
@@ -144,6 +159,14 @@ header {
     -webkit-mask-size: 20px 20px;
     -webkit-mask-repeat: no-repeat;
     background-color: #737272; }
+  header .user-popover {
+    position: absolute;
+    top: 55px;
+    right: 10px;
+    min-width: 200px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); }
 
 /* Modules */
 input {
@@ -199,5 +222,27 @@ button {
     background-color: #2b88d9; }
   button:active {
     width: 90%; }
+
+.menu .menu-item {
+  color: #262626;
+  font-size: 13px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+  .menu .menu-item:first-child a:hover {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px; }
+  .menu .menu-item:last-child {
+    border: none; }
+    .menu .menu-item:last-child a:hover {
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px; }
+  .menu .menu-item.disabled {
+    color: #aaa;
+    padding: 10px 12px; }
+  .menu .menu-item a {
+    color: #262626;
+    padding: 10px 12px; }
+    .menu .menu-item a:hover {
+      color: #fff;
+      background: #328ad6; }
 
 /*# sourceMappingURL=app.css.map */

@@ -1,0 +1,36 @@
+.menu {
+    .menu-item {
+        color: #262626;
+        font-size: 13px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+        &:first-child a:hover {
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+
+        &:last-child {
+            border: none;
+
+            a:hover {
+                border-bottom-left-radius: 3px;
+                border-bottom-right-radius: 3px;
+            }
+        }
+
+        &.disabled {
+            color: #aaa;
+            padding: 10px 12px;
+        }
+
+        a {
+            color: #262626;
+            padding: 10px 12px;
+
+            &:hover {
+                color: #fff;
+                background: #328ad6;
+            }
+        }
+    }
+}
