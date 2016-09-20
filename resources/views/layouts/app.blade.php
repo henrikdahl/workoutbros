@@ -9,12 +9,10 @@
     <body>
         @if (Auth::check())
         <header>
-            <a class="user" href="#">
+            <div class="user" href="#" data-dropdown>
                 <span class="user-avatar {{ Auth::user()->color }}">{{ Auth::user()->initials }}</span>
                 <span class="user-name">{{ Auth::user()->name }}</span>
                 <span class="user-arrow"></span>
-            </a>
-            <div class="user-popover">
                 <ul class="menu">
                     <li class="menu-item disabled">{{ Auth::user()->email }}</li>
                     <li class="menu-item"><a href="{{ url('/logout') }}">Sign Out</a></li>
@@ -23,5 +21,7 @@
         </header>
         @endif
         @yield('content')
+        <script type="text/javascript" src="{{ URL::asset('assets/js/jquery.min.js') }}"></script>
+        <script type="text/javascript" src="{{ URL::asset('assets/js/app.js') }}"></script>
     </body>
 </html>

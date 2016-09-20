@@ -6,6 +6,10 @@ require('laravel-elixir-vue');
 elixir(mix => {
     mix.sass('app.scss', 'public/assets/css');
 
+    mix.scripts([
+        'dropdown.js',
+    ], 'public/assets/js/app.js');
+
     mix.browserSync({
         files: [
             'public/assets/css/*.css',

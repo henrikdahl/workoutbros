@@ -120,11 +120,17 @@ header {
   height: 45px;
   background-color: #f7f7f7; }
   header .user {
+    position: relative;
     display: -webkit-box;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
-    padding: 2px 0 4px; }
+    padding: 2px 0 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer; }
   header .user-avatar {
     color: #fff;
     font-size: 14px;
@@ -159,14 +165,6 @@ header {
     -webkit-mask-size: 20px 20px;
     -webkit-mask-repeat: no-repeat;
     background-color: #737272; }
-  header .user-popover {
-    position: absolute;
-    top: 55px;
-    right: 10px;
-    min-width: 200px;
-    background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); }
 
 /* Modules */
 input {
@@ -223,26 +221,38 @@ button {
   button:active {
     width: 90%; }
 
-.menu .menu-item {
-  color: #262626;
-  font-size: 13px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
-  .menu .menu-item:first-child a:hover {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px; }
-  .menu .menu-item:last-child {
-    border: none; }
-    .menu .menu-item:last-child a:hover {
-      border-bottom-left-radius: 3px;
-      border-bottom-right-radius: 3px; }
-  .menu .menu-item.disabled {
-    color: #aaa;
-    padding: 10px 12px; }
-  .menu .menu-item a {
+[data-dropdown].active .menu {
+  display: block !important; }
+
+.menu {
+  display: none;
+  position: absolute;
+  top: 55px;
+  right: 10px;
+  min-width: 200px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); }
+  .menu .menu-item {
     color: #262626;
-    padding: 10px 12px; }
-    .menu .menu-item a:hover {
-      color: #fff;
-      background: #328ad6; }
+    font-size: 13px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+    .menu .menu-item:first-child a:hover {
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px; }
+    .menu .menu-item:last-child {
+      border: none; }
+      .menu .menu-item:last-child a:hover {
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px; }
+    .menu .menu-item.disabled {
+      color: #aaa;
+      padding: 10px 12px; }
+    .menu .menu-item a {
+      color: #262626;
+      padding: 10px 12px; }
+      .menu .menu-item a:hover {
+        color: #fff;
+        background: #328ad6; }
 
 /*# sourceMappingURL=app.css.map */
