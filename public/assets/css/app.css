@@ -46,6 +46,9 @@ input:focus, button:focus {
 /* Font Styles */
 /* Colors */
 /* Layout */
+body {
+  font-family: Lato, sans-serif; }
+
 .login {
   display: -webkit-box;
   display: flex;
@@ -57,7 +60,6 @@ input:focus, button:focus {
   -webkit-box-pack: center;
   justify-content: center;
   height: 100%;
-  font-family: Lato, sans-serif;
   background-color: #fafafa; }
   .login .error {
     color: #d62822;
@@ -100,6 +102,48 @@ input:focus, button:focus {
     margin-top: 10px; }
     .login .create a {
       display: inline-block; }
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  width: 100%;
+  height: 45px;
+  background-color: #f7f7f7; }
+  header .user {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 2px 0 4px; }
+  header .user-avatar {
+    width: 32px;
+    height: 32px;
+    background-color: black;
+    border-radius: 50%;
+    margin: 0 5px; }
+  header .user-name {
+    color: #262626;
+    font-size: 15px;
+    line-height: 32px;
+    padding: 0 5px; }
+  header .user-arrow {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIHZlcnNpb249IjEuMSIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgc3R5bGU9ImZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxLjQxNDIxOyI+IDxnPiA8cGF0aCBkPSJNMTAuNTAyLDEzYy0wLjEzMiwwIC0wLjI2LC0wLjA1MyAtMC4zNTQsLTAuMTQ2bC00LjAwMiwtNGMtMC4xOTUsLTAuMTk1IC0wLjE5NSwtMC41MTIgMCwtMC43MDhjMC4xOTUsLTAuMTk1IDAuNTEyLC0wLjE5NSAwLjcwNywwbDMuNjQ5LDMuNjQ3bDMuNjQ0LC0zLjY0N2MwLjE5NSwtMC4xOTUgMC41MTIsLTAuMTk1IDAuNzA3LDBjMC4xOTUsMC4xOTUgMC4xOTUsMC41MTIgMCwwLjcwOGwtMy45OTcsNGMtMC4wOTQsMC4wOTMgLTAuMjIxLDAuMTQ2IC0wLjM1NCwwLjE0NiI+PC9wYXRoPiA8L2c+IDwvc3ZnPg==");
+    -webkit-mask-size: 20px 20px;
+    -webkit-mask-repeat: no-repeat;
+    background-color: #737272; }
 
 /* Modules */
 input {
