@@ -15,10 +15,17 @@
                 <span class="user-arrow"></span>
                 <ul class="menu">
                     <li class="menu-item disabled">{{ Auth::user()->email }}</li>
+                    <li class="menu-item"><a href="">Account Settings</a></li>
                     <li class="menu-item"><a href="{{ url('/logout') }}">Sign Out</a></li>
                 </ul>
             </div>
         </header>
+        <section class="sidebar {{ Auth::user()->collapsed ? 'collapsed' : '' }}">
+            <a class="burger" href="{{ url('/update') }}"></a>
+            <ul class="nav">
+                <li class="nav-item active"><a href="">Workout</a></li>
+            </ul>
+        </section>
         @endif
         @yield('content')
         <script type="text/javascript" src="{{ URL::asset('assets/js/jquery.min.js') }}"></script>

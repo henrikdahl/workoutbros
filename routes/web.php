@@ -16,3 +16,5 @@ Auth::routes();
 Route::get('/', 'HomeController@index');
 
 Route::get('/logout', 'Auth\LoginController@logout');
+
+Route::patch('/update', 'UserController@update');

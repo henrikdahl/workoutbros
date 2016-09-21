@@ -8,6 +8,8 @@ elixir(mix => {
 
     mix.scripts([
         'dropdown.js',
+        'sidebar.js',
+        'hashtag.js',
     ], 'public/assets/js/app.js');
 
     mix.browserSync({
