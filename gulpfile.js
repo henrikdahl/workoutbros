@@ -7,9 +7,12 @@ elixir(mix => {
     mix.sass('app.scss', 'public/assets/css');
 
     mix.scripts([
+        'ajax.js',
+        'pjax.js',
         'dropdown.js',
         'sidebar.js',
         'hashtag.js',
+        'init.js',
     ], 'public/assets/js/app.js');
 
     mix.browserSync({

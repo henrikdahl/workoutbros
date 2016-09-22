@@ -3,5 +3,7 @@
 @section('title', 'Calendar')
 
 @section('content')
-Calendar
+<main>
+    calendar hoes
+</main>
 @endsection

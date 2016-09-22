@@ -3,5 +3,7 @@
 @section('title', 'Workout')
 
 @section('content')
-Workout
+<main>
+    workout broes
+</main>
 @endsection

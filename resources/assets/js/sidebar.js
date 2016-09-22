@@ -1,9 +1,3 @@
-$.ajaxSetup({
-    headers: {
-        "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
-    }
-});
-
 $.fn.toggleSidebar = function()
 {
     var $this = $(this),
@@ -25,5 +19,3 @@ $.fn.toggleSidebar = function()
         });
     });
 }
-
-$(".burger").toggleSidebar();

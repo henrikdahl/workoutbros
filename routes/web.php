@@ -13,6 +13,7 @@
 
 Auth::routes();
 
+/* Sidebar Controllers */
 Route::get('/', ['as' => 'workout', 'uses' => 'WorkoutController@index']);
 Route::get('/calendar', ['as' => 'calendar', 'uses' => 'CalendarController@index']);
 

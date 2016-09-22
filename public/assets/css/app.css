@@ -105,10 +105,6 @@ body {
       display: inline-block; }
 
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   z-index: 3;
   display: -webkit-box;
   display: flex;
@@ -168,17 +164,14 @@ header {
     background-color: #737272; }
 
 .sidebar {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
   z-index: 4;
   width: 280px;
   height: 100%;
   background: #f2f2f2; }
   .sidebar.collapsed {
-    width: 42px;
-    overflow: hidden; }
+    width: 42px; }
+    .sidebar.collapsed .nav-item {
+      overflow: hidden; }
   .sidebar .burger {
     width: 42px;
     height: 45px;
@@ -188,7 +181,7 @@ header {
   .sidebar .nav-item.active .inbox {
     background-color: #e0eefa; }
   .sidebar .nav-item.active .calendar {
-    background-color: #e9fae0; }
+    background-color: #e3f4d4; }
   .sidebar .nav-item a {
     position: relative;
     color: #262626;
@@ -216,6 +209,15 @@ header {
       width: 16px;
       height: 16px;
       padding-top: 5px; }
+
+.wrapper {
+  display: -webkit-box;
+  display: flex;
+  height: 100vh; }
+
+main {
+  -webkit-box-flex: 1;
+  flex: 1; }
 
 /* Modules */
 input {

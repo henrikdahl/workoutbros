@@ -20,5 +20,3 @@ $.fn.toggleDropdown = function()
         });
     });
 }
-
-$("[data-dropdown]").toggleDropdown();

@@ -10,5 +10,3 @@ $.fn.preventHashtag = function()
         });
     });
 }
-
-$("a[href='#']").preventHashtag();

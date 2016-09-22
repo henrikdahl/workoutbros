@@ -1,3 +1,19 @@
+$.ajaxSetup({
+    headers: {
+        "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
+    }
+});
+
+$(document).pjax("[data-pjax]", ".wrapper")
+.on("pjax:send", function()
+{
+
+})
+.on("pjax:complete", function()
+{
+    init();
+});
+
 $.fn.toggleDropdown = function()
 {
     return this.each(function()
@@ -21,14 +37,6 @@ $.fn.toggleDropdown = function()
     });
 }
 
-$("[data-dropdown]").toggleDropdown();
-
-$.ajaxSetup({
-    headers: {
-        "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
-    }
-});
-
 $.fn.toggleSidebar = function()
 {
     var $this = $(this),
@@ -51,8 +59,6 @@ $.fn.toggleSidebar = function()
     });
 }
 
-$(".burger").toggleSidebar();
-
 $.fn.preventHashtag = function()
 {
     return this.each(function()
@@ -66,6 +72,18 @@ $.fn.preventHashtag = function()
     });
 }
 
-$("a[href='#']").preventHashtag();
+function init()
+{
+    /* Prevents default on hashtag href */
+    $("a[href='#']").preventHashtag();
+
+    /* Enables sidebar collapse toggle */
+    $(".burger").toggleSidebar();
+
+    /* Toggles dropdowns */
+    $("[data-dropdown]").toggleDropdown();
+}
+
+init();
 
 //# sourceMappingURL=app.js.map

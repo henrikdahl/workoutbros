@@ -1,8 +1,4 @@
 .sidebar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
     z-index: 4;
     width: 280px;
     height: 100%;
@@ -10,7 +6,10 @@
 
     &.collapsed {
         width: 42px;
-        overflow: hidden;
+
+        .nav-item {
+            overflow: hidden;
+        }
     }
 
     .burger {
@@ -21,10 +20,6 @@
         background-position: center;
     }
 
-    .nav {
-
-    }
-
     .nav-item {
         &.active {
             .inbox {
@@ -32,7 +27,7 @@
             }
 
             .calendar {
-                background-color: #e9fae0;
+                background-color: #e3f4d4;
             }
         }
         a {
