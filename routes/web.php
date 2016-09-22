@@ -13,8 +13,11 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index');
+Route::get('/', ['as' => 'workout', 'uses' => 'WorkoutController@index']);
+Route::get('/calendar', ['as' => 'calendar', 'uses' => 'CalendarController@index']);
 
+/* Logout User */
 Route::get('/logout', 'Auth\LoginController@logout');
 
+/* Update User */
 Route::patch('/update', 'UserController@update');

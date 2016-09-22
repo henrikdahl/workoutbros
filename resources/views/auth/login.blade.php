@@ -11,6 +11,7 @@
     @endforeach
     <form id="login" method="POST" action="{{ url('/login') }}">
         {{ csrf_field() }}
+        <input type="hidden" name="remember" value="true">
         <input class="icon email" type="email" name="email" value="{{ old('email') }}" placeholder="Email" autofocus>
         <input class="icon password" type="password" name="password"  placeholder="Password">
         <button class="blue" type="submit">Sign In</button>

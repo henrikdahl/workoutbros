@@ -23,7 +23,8 @@
         <section class="sidebar {{ Auth::user()->collapsed ? 'collapsed' : '' }}">
             <a class="burger" href="{{ url('/update') }}"></a>
             <ul class="nav">
-                <li class="nav-item active"><a href="">Workout</a></li>
+                <li class="nav-item {{ isActiveRoute('workout') }}"><a class="inbox" href="{{ route('workout') }}">Workout</a></li>
+                <li class="nav-item {{ isActiveRoute('calendar') }}"><a class="calendar" href="{{ route('calendar') }}"><time>{{ Carbon::now()->day }}</time>Calendar</a></li>
             </ul>
         </section>
         @endif
