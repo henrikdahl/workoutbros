@@ -10,6 +10,7 @@ class WorkoutController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('ajax');
     }
 
     public function index()
