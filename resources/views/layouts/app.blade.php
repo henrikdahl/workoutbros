@@ -20,16 +20,19 @@
                 </ul>
             </div>
         </header>
-        <section class="sidebar {{ Auth::user()->collapsed ? 'collapsed' : '' }}">
-            <a class="burger" href="{{ url('/update') }}"></a>
-            <ul class="nav">
-                <li class="nav-item {{ isActiveRoute('workout') }}"><a class="inbox" href="{{ route('workout') }}">Workout</a></li>
-                <li class="nav-item {{ isActiveRoute('calendar') }}"><a class="calendar" href="{{ route('calendar') }}"><time>{{ Carbon::now()->day }}</time>Calendar</a></li>
-            </ul>
+        <section class="wrapper">
+            <section class="sidebar {{ Auth::user()->collapsed ? 'collapsed' : '' }}">
+                <a class="burger" href="{{ url('/update') }}"></a>
+                <ul class="nav">
+                    <li class="nav-item {{ isActiveRoute('workout') }}"><a class="inbox" href="{{ route('workout') }}" data-pjax>Workout</a></li>
+                    <li class="nav-item {{ isActiveRoute('calendar') }}"><a class="calendar" href="{{ route('calendar') }}" data-pjax><time>{{ Carbon::now()->day }}</time>Calendar</a></li>
+                </ul>
+            </section>
+            @endif
+            @yield('content')
         </section>
-        @endif
-        @yield('content')
         <script type="text/javascript" src="{{ URL::asset('assets/js/jquery.min.js') }}"></script>
+        <script type="text/javascript" src="{{ URL::asset('assets/js/jquery.pjax.min.js') }}"></script>
         <script type="text/javascript" src="{{ URL::asset('assets/js/app.js') }}"></script>
     </body>
 </html>
