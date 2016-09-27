@@ -17,6 +17,10 @@
         <button class="blue" type="submit">Sign In</button>
         <a class="forgot" href="{{ url('/password/reset') }}">Forgot your password?</a>
     </form>
+    <div class="oauth">
+        <a class="facebook" href=""></a>
+        <a class="google" href=""></a>
+    </div>
     <span class="create">Don't have an account bitch? <a href="{{ url('/register') }}">Create Account</a></span>
 </section>
 @endsection
