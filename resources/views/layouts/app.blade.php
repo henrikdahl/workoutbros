@@ -1,85 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>@yield('title'): {{ config('app.name', 'Laravel') }}</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
-
-    <!-- Scripts -->
-    <script>
-        window.Laravel = <?php echo json_encode([
-            'csrfToken' => csrf_token(),
-        ]); ?>
-    </script>
+    <link href="{{ URL::asset('assets/css/app.css') }}" rel="stylesheet" type="text/css">
 </head>
-<body>
-    <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-            <div class="navbar-header">
-
-                <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    &nbsp;
-                </ul>
-
-                <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
-                    @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="{{ url('/logout') }}"
-                                        onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
-
-                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                    @endif
+    <body>
+        @if (Auth::check())
+        <header>
+            <div class="user" href="#" data-dropdown>
+                <span class="user-avatar {{ Auth::user()->color }}">{{ Auth::user()->initials }}</span>
+                <span class="user-name">{{ Auth::user()->name }}</span>
+                <span class="user-arrow"></span>
+                <ul class="menu">
+                    <li class="menu-item disabled">{{ Auth::user()->email }}</li>
+                    <li class="menu-item"><a href="">Account Settings</a></li>
+                    <li class="menu-item"><a href="{{ url('/logout') }}">Sign Out</a></li>
                 </ul>
             </div>
-        </div>
-    </nav>
-
-    @yield('content')
-
-    <!-- Scripts -->
-    <script src="/js/app.js"></script>
-</body>
+        </header>
+        <section class="wrapper">
+            <section class="sidebar {{ Auth::user()->collapsed ? 'collapsed' : '' }}">
+                <a class="burger" href="{{ url('/update') }}"></a>
+                <ul class="nav">
+                    <li class="nav-item {{ isActiveRoute('workout') }}"><a class="inbox" href="{{ route('workout') }}" data-pjax>Workout</a></li>
+                    <li class="nav-item {{ isActiveRoute('calendar') }}"><a class="calendar" href="{{ route('calendar') }}" data-pjax><time>{{ Carbon::now()->day }}</time>Calendar</a></li>
+                </ul>
+            </section>
+            @endif
+            @yield('content')
+        </section>
+        <script type="text/javascript" src="{{ URL::asset('assets/js/jquery.min.js') }}"></script>
+        <script type="text/javascript" src="{{ URL::asset('assets/js/jquery.pjax.min.js') }}"></script>
+        <script type="text/javascript" src="{{ URL::asset('assets/js/app.js') }}"></script>
+    </body>
 </html>

@@ -1,0 +1,21 @@
+button {
+    color: #fff;
+    font-size: 16px;
+    font-family:#{$font-family};
+    font-weight: $font-weight-bold;
+    width: 91%;
+    padding: 11px 10px;
+    margin: 18px auto;
+    border-radius: 3px;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.1s all ease-in-out;
+
+    &.blue {
+        background-color: #2b88d9;
+    }
+
+    &:active {
+        width: 90%;
+    }
+}

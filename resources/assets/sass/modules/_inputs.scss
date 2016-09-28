@@ -1,0 +1,36 @@
+input {
+    display: flex;
+    width: 100%;
+    color: #666;
+    font-size: 16px;
+    font-family:#{$font-family};
+    font-weight: $font-weight-normal;
+    height: 50px;
+    padding: 0 8px;
+    background-color: transparent;
+    border-bottom: 1px solid #eee;
+
+    &::placeholder {
+        color: #a9a9a9;
+    }
+
+    &.icon {
+        padding: 0 8px 0 50px;
+        background-repeat: no-repeat;
+    }
+
+    &.name {
+        background-image: url($input-name);
+        background-position: 16px 14px;
+    }
+
+    &.email {
+        background-image: url($input-email);
+        background-position: 16px 15px;
+    }
+
+    &.password {
+        background-image: url($input-password);
+        background-position: 16px 11px;
+    }
+}

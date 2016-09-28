@@ -1,0 +1,92 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: #fafafa;
+
+    .error {
+        color: #d62822;
+        font-size: 14px;
+        max-width: 350px;
+        background-color: rgba(214, 40, 34, 0.07);
+        border: 1px solid rgba(214, 40, 34, 0.36);
+        border-radius: 4px;
+        padding: 10px 30px;
+        margin: 20px auto;
+    }
+
+    form {
+        width: 350px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(50, 50, 50, 0.08);
+    }
+
+    h2 {
+        color: #666;
+        font-size: 18px;
+        text-align: center;
+        margin: 20px auto 10px;
+    }
+
+    p {
+        color: #a3a3a2;
+        font-size: 14px;
+        font-weight: $font-weight-normal;
+        text-align: center;
+        padding: 0 20px 20px;
+        margin: 0 auto;
+        border-bottom: 1px solid #eee;
+    }
+
+    a {
+        color: #1b7edf;
+    }
+
+    .forgot {
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 18px;
+    }
+
+    .oauth {
+        font-size: 14px;
+        margin-top: 20px;
+
+        a {
+            display: inline-block;
+            width: 169px;
+            height: 46px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 26px 26px;
+            border-radius: 4px;
+
+            &.facebook {
+                background-color: #3b5998;
+                background-image: url($oauth-facebook);
+                margin-right: 9px;
+            }
+
+            &.google {
+                background-color: #dd4b39;
+                background-image: url($oauth-google);
+            }
+        }
+
+    }
+
+    .create {
+        color: #666;
+        font-size: 15px;
+        padding: 10px;
+        margin-top: 10px;
+
+        a {
+            display: inline-block;
+        }
+    }
+}

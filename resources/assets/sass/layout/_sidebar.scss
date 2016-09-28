@@ -1,0 +1,69 @@
+.sidebar {
+    z-index: 4;
+    width: 280px;
+    height: 100%;
+    background: #f2f2f2;
+
+    &.collapsed {
+        width: 42px;
+
+        .nav-item {
+            overflow: hidden;
+        }
+    }
+
+    .burger {
+        width: 42px;
+        height: 45px;
+        background-image: url($sidebar-burger);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .nav-item {
+        &.active {
+            .inbox {
+                background-color: #e0eefa;
+            }
+
+            .calendar {
+                background-color: #e3f4d4;
+            }
+        }
+        a {
+            position: relative;
+            color: #262626;
+            font-size: 15px;
+            height: 38px;
+            padding: 10px 22px 10px 42px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            background-repeat: no-repeat;
+            background-position: 11px center;
+
+            &.inbox {
+                background-image: url($sidebar-inbox);
+            }
+
+            &.calendar {
+                background-image: url($sidebar-calendar);
+            }
+
+            time {
+                position: absolute;
+                top: 11px;
+                left: 13px;
+                right: 13px;
+                color: #5fa004;
+                font-size: 8px;
+                font-weight: $font-weight-bold;
+                text-align: center;
+                width: 16px;
+                height: 16px;
+                padding-top: 5px;
+
+            }
+        }
+    }
+}
